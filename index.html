@@ -61,31 +61,31 @@
       color: #222;
     }
 
+    /* HERO SECTION */
     .hero {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: flex-start;
       gap: 2rem;
     }
 
-    .hero-text {
-      flex: 1 1 280px;
-    }
-
     .hero-photo {
-      flex: 0 0 220px;
-      height: 220px;
-      border-radius: 50%;
+      flex: 0 0 260px;
+      height: 260px;
       background: #ffffff;
       border: 2px solid #0077aa;
       overflow: hidden;
+      border-radius: 12px; /* square with slight rounding */
     }
 
     .hero-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 50%;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
     }
 
     .tagline {
@@ -130,6 +130,13 @@
       nav {
         margin-top: 0.5rem;
       }
+      .hero {
+        flex-direction: column;
+      }
+      .hero-photo {
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -154,6 +161,13 @@
     <!-- Home -->
     <section id="home">
       <div class="hero">
+
+        <!-- PHOTO LEFT -->
+        <div class="hero-photo">
+          <img src="satyapic.jpg" alt="Satya Nagisetti">
+        </div>
+
+        <!-- TEXT RIGHT -->
         <div class="hero-text">
           <h1>Senior Data Engineer · Cloud Architect · AI‑Driven Analytics</h1>
           <p class="tagline">
@@ -170,9 +184,6 @@
           </div>
         </div>
 
-        <div class="hero-photo">
-          <img src="satyapic.jpg" alt="Satya Nagisetti">
-        </div>
       </div>
     </section>
 
