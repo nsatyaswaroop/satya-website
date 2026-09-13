@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Satya Nagisetti | Senior Data Engineer</title>
+  <title>Satya Nagisetti | Senior Data Engineering Architect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #faf3e0; /* cream */
+      background: #faf3e0;
       color: #1a1a1a;
     }
 
-    a { color: #0077aa; text-decoration: none; }
+    a {
+      color: #0077aa;
+      text-decoration: none;
+    }
 
     header {
       position: sticky;
@@ -61,7 +64,6 @@
       color: #222;
     }
 
-    /* HERO SECTION */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -75,7 +77,7 @@
       background: #ffffff;
       border: 2px solid #0077aa;
       overflow: hidden;
-      border-radius: 12px; /* square */
+      border-radius: 12px;
     }
 
     .hero-photo img {
@@ -102,6 +104,8 @@
     }
 
     .btn {
+      display: inline-block;
+      box-sizing: border-box;
       padding: 0.6rem 1.1rem;
       border-radius: 999px;
       border: 1px solid #0077aa;
@@ -122,20 +126,126 @@
       font-size: 0.9rem;
     }
 
+    .hero-role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0077aa;
+      margin: -0.5rem 0 1rem;
+    }
+
+    .credibility {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .credibility div {
+      padding: 0.9rem;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+    }
+
+    .credibility strong {
+      display: block;
+      font-size: 1.25rem;
+      color: #0077aa;
+    }
+
+    .credibility span {
+      display: block;
+      margin-top: 0.2rem;
+      color: #666;
+      font-size: 0.78rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .project-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #0077aa;
+    }
+
+    .project-card h3 {
+      margin: 0.45rem 0 0.6rem;
+    }
+
+    .project-card p {
+      color: #555;
+      line-height: 1.55;
+    }
+
+    .tech {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #666;
+      font-weight: 600;
+    }
+
+    .research-note {
+      margin: 1.25rem 0;
+      padding: 1rem 1.2rem;
+      background: #fff;
+      border-left: 4px solid #0077aa;
+      border-radius: 8px;
+    }
+
+    .research-note p {
+      margin-bottom: 0;
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
       }
+
       nav {
         margin-top: 0.5rem;
       }
+
+      nav a {
+        display: inline-block;
+        margin-bottom: 0.35rem;
+      }
+
       .hero {
         flex-direction: column;
       }
+
       .hero-photo {
         width: 100%;
         height: auto;
+        aspect-ratio: 1 / 1;
+      }
+
+      .credibility {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -145,11 +255,13 @@
 
   <header>
     <div class="logo">SATYA NAGISETTI</div>
+
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#journey">Journey</a>
       <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
       <a href="#philosophy">Philosophy</a>
       <a href="#research">Research</a>
       <a href="#contact">Contact</a>
@@ -158,210 +270,429 @@
 
   <main>
 
-    <!-- Home -->
+    <!-- HOME -->
     <section id="home">
+
       <div class="hero">
 
-        <!-- PHOTO LEFT -->
         <div class="hero-photo">
           <img src="satyapic.jpg" alt="Satya Nagisetti">
         </div>
 
-        <!-- TEXT RIGHT -->
         <div class="hero-text">
-          <h1>Senior Data Engineer · AI Automation Architect · Cloud Modernization</h1>
-          <p class="tagline">
-            I build intelligent data platforms, automate engineering workflows, and design AI‑powered analytics systems that transform how enterprises use data.
+
+          <h1>Senior Data Engineering Architect</h1>
+
+          <p class="hero-role">
+            AI &amp; Cloud Modernization · Enterprise Data Platforms
           </p>
+
+          <p class="tagline">
+            I design modern data platforms that turn legacy systems into scalable,
+            cloud-native, and AI-enabled architectures.
+          </p>
+
           <p class="subtle">
-            Austin, Texas · Specializing in agentic AI, Snowflake ingestion, PostgreSQL optimization, and enterprise automation.
+            18+ years of software and data engineering · AWS · Snowflake · Spark ·
+            Python · AI engineering automation
           </p>
 
           <div class="buttons">
-            <button class="btn primary">Download Resume</button>
-            <button class="btn" onclick="document.getElementById('journey').scrollIntoView({behavior:'smooth'})">My Journey</button>
-            <button class="btn" onclick="document.getElementById('research').scrollIntoView({behavior:'smooth'})">Research</button>
+            <a class="btn primary" href="resume.pdf" download>
+              Download Resume
+            </a>
+
+            <button class="btn"
+              onclick="document.getElementById('journey').scrollIntoView({behavior:'smooth'})">
+              My Journey
+            </button>
+
+            <button class="btn"
+              onclick="document.getElementById('research').scrollIntoView({behavior:'smooth'})">
+              Research
+            </button>
           </div>
+
+          <div class="credibility">
+
+            <div>
+              <strong>18+</strong>
+              <span>Years Engineering</span>
+            </div>
+
+            <div>
+              <strong>8</strong>
+              <span>Engineers Led</span>
+            </div>
+
+            <div>
+              <strong>70%</strong>
+              <span>Spark Performance Improvement</span>
+            </div>
+
+            <div>
+              <strong>AWS</strong>
+              <span>Cloud Modernization</span>
+            </div>
+
+          </div>
+
         </div>
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+      <h2>About</h2>
+
+      <p>
+        I’ve always been drawn to systems that are messy, fragile, or misunderstood.
+        The more complex the environment, the more interesting the challenge.
+        Over time, that curiosity turned into a career focused on transforming
+        scattered data, legacy code, and manual processes into clean, automated,
+        intelligent platforms.
+      </p>
+
+      <p>
+        My engineering interests extend beyond data pipelines. I enjoy building
+        modern apps, microservices, and lightweight automation tools that solve
+        real problems for teams. Whether it’s a service that monitors pipelines,
+        an API that compares databases, or an internal app that converts legacy
+        code into modern engines, I like creating software that feels purposeful
+        and practical.
+      </p>
+
+      <p>
+        One of my most impactful contributions has been designing an automated
+        framework that converts legacy SAS scripts into PySpark pipelines.
+        It eliminates manual rewrites, reduces migration time, and gives engineers
+        a predictable path from old systems to modern cloud-native architectures.
+      </p>
+
+      <p>
+        Today, my work lives at the intersection of cloud engineering, AI-driven
+        automation, microservice design, and modern analytics. I’m especially
+        focused on agentic AI — building systems that can watch, reason, and
+        assist engineers and business users instead of just waiting to be queried.
+      </p>
+
+    </section>
+
+
+    <!-- CAREER JOURNEY -->
+    <section id="journey">
+
+      <h2>Career Journey</h2>
+
+      <p>
+        My journey has been shaped by a desire to build things that make life
+        easier for engineers, analysts, and business teams. I’ve moved from BI
+        and reporting into deep data engineering, architecture, AI automation,
+        and microservice development. Along the way, I’ve built tools that
+        compare entire databases, frameworks that translate old code into
+        modern engines, and apps that bring intelligence directly into
+        analytics workflows.
+      </p>
+
+      <h3>Experian Services — Team Lead</h3>
+
+      <p>
+        At Experian, modernization meant dealing with years of accumulated logic
+        in legacy ETL and SAS code. I led efforts to rebuild DataStage pipelines
+        into AWS Glue and Snowflake, and designed a conversion framework that
+        translated SAS scripts into PySpark. This framework became a reusable
+        migration engine that accelerated modernization across teams.
+      </p>
+
+      <p>
+        I also built microservices that automated SQL validation, metadata
+        extraction, and documentation. One of the most impactful was a database
+        comparison service that analyzed schema differences, lineage gaps, and
+        data quality issues between legacy systems and Snowflake. It turned
+        weeks of manual analysis into a guided, automated workflow.
+      </p>
+
+      <h3>Germania Insurance — BI Lead / Data Engineer</h3>
+
+      <p>
+        At Germania, I focused on making analytics feel less like reporting
+        and more like insight. I integrated AI into dashboards to generate
+        narrative commentary, flag anomalies, and surface risks. I also built
+        internal apps and microservices that supported ingestion, quality checks,
+        and automated KPI monitoring.
+      </p>
+
+      <h3>Earlier Roles</h3>
+
+      <p>
+        My earlier work across ThermoFisher, GM, Deloitte, and Accenture gave me
+        the architectural discipline I still rely on: dimensional modeling,
+        warehouse design, BI modernization, and large-scale system migrations.
+        Those environments taught me how to build systems that don’t just work
+        once, but keep working as the business grows and changes.
+      </p>
+
+    </section>
+
+
+    <!-- FEATURED WORK -->
+    <section id="work">
+
+      <h2>Featured Engineering Work</h2>
+
+      <p>
+        Selected examples of enterprise modernization, data engineering
+        automation, cloud architecture, and AI-assisted engineering.
+      </p>
+
+      <div class="projects">
+
+        <article class="project-card">
+
+          <span class="project-label">MODERNIZATION</span>
+
+          <h3>Legacy SAS → PySpark Modernization Engine</h3>
+
+          <p>
+            Designed a reusable framework to translate legacy SAS workloads into
+            PySpark pipelines, helping teams move toward modern cloud-native
+            data platforms.
+          </p>
+
+          <div class="tech">
+            SAS · Python · PySpark · AWS Glue · Spark
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <span class="project-label">DATA VALIDATION</span>
+
+          <h3>DB2 → Redshift Intelligent Comparison</h3>
+
+          <p>
+            Built an automated database comparison approach for SQL execution,
+            reconciliation, schema validation, and migration quality analysis.
+          </p>
+
+          <div class="tech">
+            DB2 · Redshift · SQL · Python · Data Quality
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <span class="project-label">AI ENGINEERING</span>
+
+          <h3>AI-Assisted Data Engineering</h3>
+
+          <p>
+            Exploring practical AI systems that monitor pipelines, interpret
+            metadata, assist SQL optimization, generate documentation, and
+            support engineering decisions.
+          </p>
+
+          <div class="tech">
+            AI · LLMs · Agentic Workflows · SQL · Metadata
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <span class="project-label">CLOUD ARCHITECTURE</span>
+
+          <h3>Enterprise Cloud Modernization</h3>
+
+          <p>
+            Modernized legacy ETL and analytics workloads using AWS-native
+            services, Snowflake, Spark, and automated delivery practices.
+          </p>
+
+          <div class="tech">
+            AWS · Snowflake · Glue · S3 · Spark · CI/CD
+          </div>
+
+        </article>
 
       </div>
+
     </section>
 
-    <!-- About -->
-    <section id="about">
-  <h2>About</h2>
-  <p>
-    I’ve always been drawn to systems that are messy, fragile, or misunderstood. The more
-    complex the environment, the more interesting the challenge. Over time, that curiosity
-    turned into a career focused on transforming scattered data, legacy code, and manual
-    processes into clean, automated, intelligent platforms.
-  </p>
 
-  <p>
-    My engineering interests extend beyond data pipelines. I enjoy building modern apps,
-    microservices, and lightweight automation tools that solve real problems for teams.
-    Whether it’s a service that monitors pipelines, an API that compares databases, or an
-    internal app that converts legacy code into modern engines, I like creating software
-    that feels purposeful and practical.
-  </p>
-
-  <p>
-    One of my most impactful contributions has been designing an automated framework that
-    converts legacy SAS scripts into PySpark pipelines. It eliminates manual rewrites,
-    reduces migration time, and gives engineers a predictable path from old systems to
-    modern cloud-native architectures.
-  </p>
-
-  <p>
-    Today, my work lives at the intersection of cloud engineering, AI-driven automation,
-    microservice design, and modern analytics. I’m especially focused on agentic AI —
-    building systems that can watch, reason, and assist engineers and business users
-    instead of just waiting to be queried.
-  </p>
-</section>
-
-
-   <section id="journey">
-  <h2>Career Journey</h2>
-
-  <p>
-    My journey has been shaped by a desire to build things that make life easier for
-    engineers, analysts, and business teams. I’ve moved from BI and reporting into deep
-    data engineering, architecture, AI automation, and microservice development. Along the
-    way, I’ve built tools that compare entire databases, frameworks that translate old code
-    into modern engines, and apps that bring intelligence directly into analytics workflows.
-  </p>
-
-  <h3>Experian Services — Team Lead</h3>
-  <p>
-    At Experian, modernization meant dealing with years of accumulated logic in legacy ETL
-    and SAS code. I led efforts to rebuild DataStage pipelines into AWS Glue and Snowflake,
-    and designed a conversion framework that translated SAS scripts into PySpark. This
-    framework became a reusable migration engine that accelerated modernization across teams.
-  </p>
-
-  <p>
-    I also built microservices that automated SQL validation, metadata extraction, and
-    documentation. One of the most impactful was a database comparison service that analyzed
-    schema differences, lineage gaps, and data quality issues between legacy systems and
-    Snowflake. It turned weeks of manual analysis into a guided, automated workflow.
-  </p>
-
-  <h3>Germania Insurance — BI Lead / Data Engineer</h3>
-  <p>
-    At Germania, I focused on making analytics feel less like reporting and more like insight.
-    I integrated AI into dashboards to generate narrative commentary, flag anomalies, and
-    surface risks. I also built internal apps and microservices that supported ingestion,
-    quality checks, and automated KPI monitoring.
-  </p>
-
-  <h3>Earlier Roles</h3>
-  <p>
-    My earlier work across ThermoFisher, GM, Deloitte, and Accenture gave me the architectural
-    discipline I still rely on: dimensional modeling, warehouse design, BI modernization, and
-    large-scale system migrations. Those environments taught me how to build systems that
-    don’t just work once, but keep working as the business grows and changes.
-  </p>
-</section>
-
-
-    <!-- Philosophy -->
+    <!-- PHILOSOPHY -->
     <section id="philosophy">
+
       <h2>Engineering Philosophy</h2>
+
       <p>
-        I believe great data systems are quiet. They don’t draw attention to themselves.
-        They run predictably, scale gracefully, and make life easier for the people who
-        depend on them. My job is to build those systems — the ones that disappear into
-        the background because they simply work.
+        I believe great data systems are quiet. They don’t draw attention to
+        themselves. They run predictably, scale gracefully, and make life easier
+        for the people who depend on them. My job is to build those systems —
+        the ones that disappear into the background because they simply work.
       </p>
 
       <p>
-        I also believe AI belongs inside engineering, not outside it. Not as a replacement
-        for human judgment, but as a tool that amplifies it. AI can validate pipelines,
-        generate documentation, detect anomalies, and accelerate development — but only
-        when guided by engineers who understand the craft.
+        I also believe AI belongs inside engineering, not outside it. Not as a
+        replacement for human judgment, but as a tool that amplifies it.
+        AI can validate pipelines, generate documentation, detect anomalies,
+        and accelerate development — but only when guided by engineers who
+        understand the craft.
       </p>
 
       <p>
-        At the end of the day, I’m not trying to build the flashiest systems. I’m trying
-        to build the ones that last.
+        At the end of the day, I’m not trying to build the flashiest systems.
+        I’m trying to build the ones that last.
       </p>
+
     </section>
 
+
+    <!-- SKILLS -->
     <section id="skills">
-  <h2>AI, Automation, Apps & Engineering Expertise</h2>
 
-  <h3>AI Development & Automation</h3>
-  <ul>
-    <li>AI-assisted SQL optimization, validation, and documentation</li>
-    <li>Agentic AI prototypes for pipeline monitoring and remediation</li>
-    <li>Automated metadata extraction and lineage mapping</li>
-    <li>AI-powered dashboard commentary and anomaly detection</li>
-    <li>Database comparison engines for migration and modernization</li>
-    <li>Frameworks to convert SAS scripts into PySpark pipelines</li>
-  </ul>
+      <h2>Architecture &amp; Engineering Expertise</h2>
 
-  <h3>App & Microservice Development</h3>
-  <ul>
-    <li>Building internal apps for analytics, automation, and engineering workflows</li>
-    <li>Designing microservices for metadata intelligence, SQL validation, and ingestion</li>
-    <li>Developing lightweight APIs for database comparison and schema analysis</li>
-    <li>Creating automation tools that support migration, quality checks, and monitoring</li>
-  </ul>
+      <h3>AI Development &amp; Automation</h3>
 
-  <h3>Cloud & Data Engineering</h3>
-  <ul>
-    <li>Snowflake ingestion frameworks (Snowpipe, Streams, Tasks)</li>
-    <li>AWS Glue, Lambda, Step Functions, Athena</li>
-    <li>PostgreSQL, PL/pgSQL, T-SQL, SQL MI</li>
-    <li>Python, PySpark, dbt</li>
-  </ul>
+      <ul>
+        <li>AI-assisted SQL optimization, validation, and documentation</li>
+        <li>Agentic AI prototypes for pipeline monitoring and remediation</li>
+        <li>Automated metadata extraction and lineage mapping</li>
+        <li>AI-powered dashboard commentary and anomaly detection</li>
+        <li>Database comparison engines for migration and modernization</li>
+        <li>Frameworks to convert SAS scripts into PySpark pipelines</li>
+      </ul>
 
-  <h3>Enterprise Analytics</h3>
-  <ul>
-    <li>Power BI, Tableau, Cognos</li>
-    <li>AI-integrated dashboards for business insights</li>
-    <li>Semantic layer design and KPI modeling</li>
-  </ul>
-</section>
 
-    <!-- Research -->
+      <h3>App &amp; Microservice Development</h3>
+
+      <ul>
+        <li>Building internal apps for analytics, automation, and engineering workflows</li>
+        <li>Designing microservices for metadata intelligence, SQL validation, and ingestion</li>
+        <li>Developing lightweight APIs for database comparison and schema analysis</li>
+        <li>Creating automation tools that support migration, quality checks, and monitoring</li>
+      </ul>
+
+
+      <h3>Cloud &amp; Data Engineering</h3>
+
+      <ul>
+        <li>Snowflake ingestion frameworks (Snowpipe, Streams, Tasks)</li>
+        <li>AWS Glue, Lambda, Step Functions, Athena</li>
+        <li>PostgreSQL, PL/pgSQL, T-SQL, SQL MI</li>
+        <li>Python, PySpark, dbt</li>
+      </ul>
+
+
+      <h3>Enterprise Analytics</h3>
+
+      <ul>
+        <li>Power BI, Tableau, Cognos</li>
+        <li>AI-integrated dashboards for business insights</li>
+        <li>Semantic layer design and KPI modeling</li>
+      </ul>
+
+    </section>
+
+
+    <!-- RESEARCH -->
     <section id="research">
-      <h2>Research & Thought Leadership</h2>
+
+      <h2>Research &amp; Thought Leadership</h2>
 
       <p>
-        I’m currently writing research papers on <strong>Modern Agentic AI</strong> and how
-        autonomous systems can reshape industries like insurance, fintech, manufacturing,
-        and enterprise operations. My work explores how agents can plan, act, evaluate,
-        and collaborate with human engineers.
+        I’m currently writing research papers on <strong>Modern Agentic AI</strong>
+        and how autonomous systems can reshape industries like insurance,
+        fintech, manufacturing, and enterprise operations. My work explores
+        how agents can plan, act, evaluate, and collaborate with human engineers.
       </p>
 
-      <h3>Current Research Themes</h3>
+      <h3>Research Focus</h3>
+
       <ul>
         <li>Agentic AI for pipeline monitoring and automated remediation</li>
-        <li>AI‑driven metadata intelligence for large‑scale migrations</li>
+        <li>AI-driven metadata intelligence for large-scale migrations</li>
         <li>Autonomous SQL tuning and query optimization</li>
-        <li>AI‑powered business commentary for dashboards</li>
-        <li>Cross‑industry applications of agentic systems</li>
+        <li>AI-powered business commentary for dashboards</li>
+        <li>Cross-industry applications of agentic systems</li>
       </ul>
+
+
+      <div class="research-note">
+
+        <strong>Publication roadmap</strong>
+
+        <p>
+          Each research project will document the problem, architecture,
+          methodology, experiments, measurable results, and practical enterprise
+          applications. Publication links, papers, and supporting code will be
+          added as they become available.
+        </p>
+
+      </div>
+
 
       <p>
-        My goal is to build frameworks where AI becomes a reliable engineering partner —
-        not a novelty, but a practical tool that improves quality, speed, and clarity across
-        enterprise data systems.
+        My goal is to build frameworks where AI becomes a reliable engineering
+        partner — not a novelty, but a practical tool that improves quality,
+        speed, and clarity across enterprise data systems.
       </p>
+
     </section>
 
-    <!-- Contact -->
+
+    <!-- CONTACT -->
     <section id="contact">
+
       <h2>Contact</h2>
-      <p class="subtle">Let’s connect professionally.</p>
+
+      <p class="subtle">
+        Let’s connect professionally.
+      </p>
 
       <ul>
-        <li><strong>Email:</strong> satya.nagisetti@gmail.com</li>
-        <li><strong>LinkedIn:</strong> linkedin.com/in/satyanagisetti</li>
-        <li><strong>Location:</strong> Austin, Texas</li>
+
+        <li>
+          <strong>Email:</strong>
+          satya.nagisetti@gmail.com
+        </li>
+
+        <li>
+          <strong>LinkedIn:</strong>
+          <a
+            href="https://www.linkedin.com/in/satyanagisetti"
+            target="_blank"
+            rel="noopener">
+            linkedin.com/in/satyanagisetti
+          </a>
+        </li>
+
+        <li>
+          <strong>GitHub:</strong>
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener">
+            GitHub
+          </a>
+        </li>
+
+        <li>
+          <strong>Location:</strong>
+          Austin, Texas
+        </li>
+
       </ul>
+
     </section>
 
   </main>
